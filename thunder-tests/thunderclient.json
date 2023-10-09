@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "2f44e6a6-2f06-49a6-81bb-96eb54030ba2",
+    "colId": "d9eb3ada-cffc-4600-8ff4-d545c063e581",
+    "containerId": "",
+    "name": "create_study_resource",
+    "url": "http://127.0.0.1:5000/api/study_material",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2023-10-09T13:49:25.556Z",
+    "modified": "2023-10-09T14:03:38.272Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"topic\": \"MAD1 Lecture1\",\n  \"description\": \"Description for mad1\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "fe5a54cc-0d5f-4767-9073-3078ac959c24",
+    "colId": "d9eb3ada-cffc-4600-8ff4-d545c063e581",
+    "containerId": "",
+    "name": "get_study_resource",
+    "url": "http://127.0.0.1:5000/api/study_material",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-10-09T14:11:14.079Z",
+    "modified": "2023-10-09T14:11:33.122Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
