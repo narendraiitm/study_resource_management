@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2023-10-09T13:49:25.556Z",
-    "modified": "2023-10-09T14:03:38.272Z",
+    "modified": "2023-10-16T12:41:54.196Z",
     "headers": [],
     "params": [],
     "body": {
@@ -29,6 +29,70 @@
     "created": "2023-10-09T14:11:14.079Z",
     "modified": "2023-10-09T14:11:33.122Z",
     "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "114728e6-a75e-492c-91b9-16bb1e693ecd",
+    "colId": "d9eb3ada-cffc-4600-8ff4-d545c063e581",
+    "containerId": "",
+    "name": "login",
+    "url": "http://127.0.0.1:5000/login?include_auth_token",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2023-10-16T07:09:09.020Z",
+    "modified": "2023-10-16T14:25:09.356Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "include_auth_token",
+        "value": "",
+        "isPath": false
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"inst1@email.com\",\n  \"password\":\"inst1\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "b747e51c-0ce4-4022-95c6-e60ca7729339",
+    "colId": "d9eb3ada-cffc-4600-8ff4-d545c063e581",
+    "containerId": "",
+    "name": "admin",
+    "url": "http://127.0.0.1:5000/admin",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2023-10-16T07:34:16.260Z",
+    "modified": "2023-10-16T13:59:47.477Z",
+    "headers": [
+      {
+        "name": "Authentication-Token",
+        "value": "WyJhMzM0YTE3Y2JjYzQ0YjgzYTU5ZWE4ODQ1OWQxYjdjMiJd.ZS1Bag.rfUfK9Mp3kGGQXXD--qyGLTKpSQ",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "4f9574d8-b1dd-4eb0-a70a-8413f7896794",
+    "colId": "d9eb3ada-cffc-4600-8ff4-d545c063e581",
+    "containerId": "",
+    "name": "activate_inst",
+    "url": "http://127.0.0.1:5000/activate/inst/2",
+    "method": "GET",
+    "sortNum": 60000,
+    "created": "2023-10-16T14:22:48.124Z",
+    "modified": "2023-10-16T14:24:13.496Z",
+    "headers": [
+      {
+        "name": "Authentication-Token",
+        "value": "WyI1MDE0MGEwZDYxMmI0NWExYTliYjIzMjgxYTI5MDE4MiJd.ZS1HGQ.OXQUrpm9Wzam9vny3BV17swIh1g"
+      }
+    ],
     "params": [],
     "tests": []
   }
