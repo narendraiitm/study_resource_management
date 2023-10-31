@@ -1,6 +1,7 @@
 from flask import current_app as app, jsonify, request, render_template
 from flask_security import auth_required, roles_required
 from werkzeug.security import check_password_hash
+from flask_restful import marshal, fields
 from .models import User, db
 from .sec import datastore
 
@@ -45,3 +46,17 @@ def user_login():
     else:
         return jsonify({"message": "Wrong Password"}), 400
 
+user_fields = {
+    "id": fields.Integer,
+    "email": fields.String,
+    "active": fields.Boolean
+}
+
+@app.get('/users')
+@auth_required("token")
+@roles_required("admin")
+def all_users():
+    users = User.query.all()
+    if len(users) == 0:
+        return jsonify({"message": "No User Found"}), 404
+    return marshal(users, user_fields)

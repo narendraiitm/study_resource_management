@@ -1,4 +1,5 @@
 from flask_restful import Resource, Api, reqparse, marshal_with, fields
+from flask_security import auth_required, roles_required, current_user
 from .models import StudyResource, db
 
 
@@ -19,13 +20,16 @@ study_material_fields = {
 
 class StudyMaterial(Resource):
     @marshal_with(study_material_fields)
+    @auth_required("token")
     def get(self):
         all_study_material = StudyResource.query.all()
         return all_study_material
 
+    @auth_required("token")
+    @roles_required("stud")
     def post(self):
         args = parser.parse_args()
-        study_resource=StudyResource(**args)
+        study_resource=StudyResource(topic=args.get("topic"), description=args.get("description"), resource_link=args.get("resource_link"), creator_id=current_user.id)
         db.session.add(study_resource)
         db.session.commit()
         return {"message": "Study Resource Created"}

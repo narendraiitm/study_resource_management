@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
     fs_uniquifier = db.Column(db.String(255), unique=True, nullable=False)
     roles = db.relationship('Role', secondary='roles_users',
                          backref=db.backref('users', lazy='dynamic'))
-    # study_resource = db.relationship('StudyResource', backref='creator')
+    study_resource = db.relationship('StudyResource', backref='creator')
     
 class Role(db.Model, RoleMixin):
     id = db.Column(db.Integer(), primary_key=True)
@@ -28,6 +28,6 @@ class StudyResource(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     topic = db.Column(db.String, nullable=False)
     description = db.Column(db.String, nullable=False)
-    # creator_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    creator_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     resource_link = db.Column(db.String, nullable=False)
     is_approved = db.Column(db.Boolean(), default=False)

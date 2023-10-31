@@ -9,16 +9,29 @@ export default {
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+        <li class="nav-item" v-if="role=='admin'">
+          <router-link class="nav-link" to="/users">Users</router-link>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+        <li class="nav-item" v-if="is_login">
+          <button class="nav-link" @click='logout' >logout</button>
         </li>
       </ul>
     </div>
   </div>
 </nav>`,
+  data() {
+    return {
+      role: localStorage.getItem('role'),
+      is_login: localStorage.getItem('auth-token'),
+    }
+  },
+  methods: {
+    logout() {
+      localStorage.removeItem('auth-token')
+      localStorage.removeItem('role')
+      this.$router.push({ path: '/login' })
+    },
+  },
 }
