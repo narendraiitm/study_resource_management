@@ -27,9 +27,19 @@
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-10-09T14:11:14.079Z",
-    "modified": "2023-10-09T14:11:33.122Z",
-    "headers": [],
+    "modified": "2023-11-06T13:37:24.800Z",
+    "headers": [
+      {
+        "name": "Authentication-Token",
+        "value": "WyJkOTQ0ZGNlMjUyNDU0NzUxOGQ4MGZhYzY1NzU0NTJjMCJd.ZUjsAQ.7VxGa5pZBnXPDbHqMRi_ozs7psc"
+      }
+    ],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"admin@email.com\",\n  \"password\": \"admin\"\n}",
+      "form": []
+    },
     "tests": []
   },
   {
@@ -37,22 +47,16 @@
     "colId": "d9eb3ada-cffc-4600-8ff4-d545c063e581",
     "containerId": "",
     "name": "login",
-    "url": "http://127.0.0.1:5000/login?include_auth_token",
+    "url": "http://127.0.0.1:5000/user-login",
     "method": "POST",
     "sortNum": 30000,
     "created": "2023-10-16T07:09:09.020Z",
-    "modified": "2023-10-16T14:25:09.356Z",
+    "modified": "2023-11-06T13:37:05.667Z",
     "headers": [],
-    "params": [
-      {
-        "name": "include_auth_token",
-        "value": "",
-        "isPath": false
-      }
-    ],
+    "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\":\"inst1@email.com\",\n  \"password\":\"inst1\"\n}",
+      "raw": "{\n  \"email\":\"admin@email.com\",\n  \"password\":\"admin\"\n}",
       "form": []
     },
     "tests": []
