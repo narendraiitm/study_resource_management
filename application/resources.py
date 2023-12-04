@@ -3,6 +3,7 @@ from flask_security import auth_required, roles_required, current_user
 from flask import jsonify
 from sqlalchemy import or_
 from .models import StudyResource, db
+from .instances import cache
 
 
 api = Api(prefix='/api')
@@ -33,6 +34,7 @@ study_material_fields = {
 
 class StudyMaterial(Resource):
     @auth_required("token")
+    @cache.cached(timeout=50)
     def get(self):
         if "inst" in current_user.roles:
             study_resources = StudyResource.query.all()
